@@ -73,9 +73,8 @@ module Devise
       #   * If all authentication keys are present;
       #
       def valid_for_params_auth?
-        puts 'valid for params auth called' * 100
-        params_authenticatable? && valid_params? &&
-          with_authentication_hash(:params_auth, params_auth_hash)
+        params_authenticatable? && valid_params_request? &&
+          valid_params? && with_authentication_hash(:params_auth, params_auth_hash)
       end
 
       # Check if the model accepts this strategy as http authenticatable.

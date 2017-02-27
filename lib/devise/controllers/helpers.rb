@@ -157,6 +157,7 @@ module Devise
 
       # Tell warden that params authentication is allowed for that specific page.
       def allow_params_authentication!
+        puts "allow_params_authentication! is called"
         request.env["devise.allow_params_authentication"] = true
       end
 
