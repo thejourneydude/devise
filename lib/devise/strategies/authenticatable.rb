@@ -13,6 +13,7 @@ module Devise
       end
 
       def valid?
+        puts "called method #{caller_locations(1,1)[0].label}"
         puts "valid? returns as #{valid_for_params_auth?} or #{valid_for_http_auth?} "
         valid_for_params_auth? || valid_for_http_auth?
       end
