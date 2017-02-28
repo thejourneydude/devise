@@ -77,7 +77,7 @@ module Devise
         puts "** params_authenticatable? equals #{params_authenticatable?}"
         puts "** valid_params_request? equals #{valid_params_request?}"
         puts "** valid_params? equals #{valid_params?}"
-        puts "** with_authentication_hash(:params_auth, params_auth_hash) equals #{with_authentication_hash(:params_auth, params_auth_hash)}"
+        puts "** with_authentication_hash(:params_auth, params_auth_hash) equals #{with_authentication_hash(:params_auth, params_auth_hash)}" if params_auth_hash
         params_authenticatable? && valid_params_request? &&
           valid_params? && with_authentication_hash(:params_auth, params_auth_hash)
       end
