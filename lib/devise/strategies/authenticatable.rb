@@ -73,6 +73,7 @@ module Devise
       #   * If all authentication keys are present;
       #
       def valid_for_params_auth?
+        puts "==== valid_for_params_auth? called" * 100
         params_authenticatable? && valid_params_request? &&
           valid_params? && with_authentication_hash(:params_auth, params_auth_hash)
       end
@@ -100,6 +101,8 @@ module Devise
 
       # By default, a request is valid if the controller set the proper env variable.
       def valid_params_request?
+        puts "==== valid_params_request? called and equals #{env["devise.allow_params_authentication"]} and #{!!env["devise.allow_params_authentication"]}" * 100
+
         !!env["devise.allow_params_authentication"]
       end
 
