@@ -94,6 +94,7 @@ MESSAGE
   # Example:
   #   before_filter :require_no_authentication, only: :new
   def require_no_authentication
+    puts "require_no_authentication called"
     assert_is_devise_resource!
     return unless is_navigational_format?
     no_input = devise_mapping.no_input_strategies
